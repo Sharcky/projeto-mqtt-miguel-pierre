@@ -49,7 +49,7 @@ void setup() {
 void loop() {
   mqttClient.connect("miguelpierre");
     mensagem = mqttClient.publish( "miguelpierre-T", "Cool" );
-    Serial.println(mensagem);
+    //Serial.println(mensagem);
 
     estado_sensor = digitalRead(pino2);
 
@@ -57,6 +57,7 @@ void loop() {
   {
     mqttClient.connect("miguelpierre");
     mensagem = mqttClient.publish("miguelpierre-T", "Porta aberta ");    
+    Serial.println("Porta aberta");
     Serial.println(estado_sensor);  
   }
 
@@ -64,6 +65,7 @@ void loop() {
   {
     mqttClient.connect("miguelpierre");
     mensagem = mqttClient.publish("miguelpierre-T", "Porta fechada ");
+    Serial.println("Porta fechada");
     Serial.println(estado_sensor);
   }
     
